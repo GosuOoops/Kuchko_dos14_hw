@@ -1,0 +1,8 @@
+ev@mfsystem:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.1 LTS
+Release:        22.04
+Codename:       jammy
+ev@mfsystem:~$ uname -srm
+Linux 5.15.0-60-generic x86_64
