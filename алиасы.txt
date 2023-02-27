@@ -1,0 +1,3 @@
+echo -e "alias ssh yc_vm='ssh kuchko@158.160.18.207'" >> ~/.bashrc; . ~/.bashrc
+echo -e "alias start_yc_vm='yc compute instance start kuchko'" >> ~/.bashrc; . ~/.bashrc
+echo -e "alias stop_yc_vm='yc compute instance stop kuchko'" >> ~/.bashrc; . ~/.bashrc
