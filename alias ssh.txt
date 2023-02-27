@@ -1,5 +1,4 @@
-vi ~/.ssh/config
-
-Host yc_vm
-	HostName 192.168.225.22
-	User Kuchko 
+Host yandexvm
+        User testuser
+        CheckHostIP no
+        ProxyCommand bash -c "nc $(~/.ssh/yc-ip) %p"
