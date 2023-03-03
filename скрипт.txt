@@ -1,0 +1,14 @@
+
+#!/bin/bash
+# This script monitors CPU and memory usage
+
+
+  # Get the current usage of CPU and memory and my ip
+  cpuUsage=$(top -bn1 | awk '/Cpu/ { print $2}')
+  memUsage=$(free -m | awk '/Mem/{print $3}')
+  IP=$(ip --brief address show enp0s3 | awk '{print $3}' | cut -d'/' -f1)
+
+# Print the usage
+  echo "My IP is $IP"
+  echo "Процессор: $cpuUsage%"
+  echo "Память: $memUsage MB"
