@@ -1,0 +1,7 @@
+Выводит сообщения о бесконечном цикле
+
+import time
+ 
+while True:
+    print("Test service is alive")
+    time.sleep(5)
