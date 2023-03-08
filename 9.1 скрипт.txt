@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+
+Proc=$(ps -u "$(echo $(w -h | cut -d ' ' -f1 | sort -u))" o user= | sort | uniq -c | sort -rn)
+
+echo "Кол-во процессов: $Proc"
+
+Loadaverage=$(top -b -n 1 |awk '/load average/ {printf "15m -> %s\n",$10,$11,$12}')
+
+echo "Loadaverage: $Loadaverage"
+
+memFree=$(free -m | awk '/Mem/{print $3}')
+
+echo "Freememory: $memFree MB"
+
+MBfree=$(( $(stat -f -c '%a * %S / 1024 / 1024' / ) ))
+
+echo "Root/memory: $MBfree"
