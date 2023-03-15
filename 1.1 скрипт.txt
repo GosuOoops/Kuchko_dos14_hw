@@ -1,0 +1,8 @@
+
+#1/bin/bash
+
+var='this is test sample'
+
+echo $var
+
+echo ${var//' '}
