@@ -1,0 +1,7 @@
+#1/bin/bash
+
+arr1=(foo bar blah test 123 smad dasd foo)
+
+arr2=(bar blah test 1223 ss foo dfd)
+
+echo ${arr1[@]} ${arr2[@]} | tr ' ' '\n' | sort | uniq -d
