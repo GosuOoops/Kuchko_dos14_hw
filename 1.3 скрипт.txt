@@ -1,0 +1,30 @@
+  GNU nano 6.2                                                                                                         3.sh
+#!/bin/bash
+
+echo 'Files with sh extension:'
+
+for file in **.sh; do
+        echo "${file##/}"
+
+done
+
+echo 'Files with txt extension:'
+
+for file in **.txt; do
+        echo "${file##/}"
+
+done
+
+echo 'Files with no extension:'
+
+
+type=$(find . -maxdepth 1 -name "*" -not -name "*.*" | sed 's/^\.\///g')
+
+echo  $type
+
+echo 'Files with pptx extension:'
+
+for file in **.pptx; do
+        echo "${file##/}"
+
+done
