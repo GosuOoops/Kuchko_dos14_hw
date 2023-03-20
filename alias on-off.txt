@@ -1,0 +1,4 @@
+nano ~/.bashrc
+alias start_yc_vm="yc compute instance start kuchko"
+alias stop_yc_vm="yc compute instance stop kuchko"
+source ~/.bashrc

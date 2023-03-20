@@ -1,0 +1,4 @@
+Host yandexvm
+        User testuser
+        CheckHostIP no
+        ProxyCommand bash -c "nc $(~/.ssh/yc-ip) %p"
