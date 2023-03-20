@@ -22,12 +22,10 @@ echo "$mul"
 
 elif [ div == $arg ]
 then
-di=`echo "scale=2; $a / $b"| bc`
+di=`echo "scale=2; $a / $b" | bc`
 echo "$di"
 
 else
 echo "no operate"
 exit 1
 fi
-
-exit 0
