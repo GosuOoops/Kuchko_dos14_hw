@@ -1,0 +1,13 @@
+
+#1/bin/bash
+
+function identicalStrings {
+        local -n argArr1=$1
+        local -n argArr2=$2
+        echo ${argArr1[@]} ${argArr2[@]} | tr ' ' '\n' | sort | uniq -d
+}
+
+arr1=("foo" "bar" "blah" "test" "123" "smad" "dasd" "foo")
+arr2=("bar" "blah" "test" "1223" "ss" "foo" "dfd")
+
+identicalStrings arr1 arr2

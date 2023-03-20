@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function filesInfo {
+	echo 'Files with sh extension:'
+
+	for file in **.sh; do
+        	echo -e "${file##/}" | awk '{print"      ",$0}'
+	done
+
+	echo 'Files with txt extension:'
+
+	for file in **.txt; do
+ 		echo "${file##/}" | awk '{print"      ",$0}'
+	done
+
+	echo 'Files with no extension:'
+	type=$(find . -maxdepth 1 -name "*" -not -name "*.*" | sed 's/^\.\///g')
+	echo  $type | awk '{print"      ",$0}'
+
+
+	echo 'Files with pptx extension:'
+
+	for file in **.pptx; do
+        	echo "${file##/}" | awk '{print"      ",$0}'
+	done
+}
+
+filesInfo

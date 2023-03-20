@@ -1,0 +1,33 @@
+#!/bin/bash
+
+arg=$1
+a=$2
+b=$3
+
+
+if [ add == $arg ]
+then
+sum=`echo "$a + $b" | bc`
+echo "$sum"
+
+elif [ sub == $arg ]
+then
+min=`echo "$a - $b" | bc`
+echo "$min"
+
+elif [ mult == $arg ]
+then
+mul=`echo "$a * $b" | bc`
+echo "$mul"
+
+elif [ div == $arg ]
+then
+di=`echo "scale=2; $a / $b"| bc`
+echo "$di"
+
+else
+echo "no operate"
+exit 1
+fi
+
+exit 0
