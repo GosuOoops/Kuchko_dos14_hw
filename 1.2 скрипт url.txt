@@ -1,13 +1,13 @@
-
 #!/bin/bash
+
+echo "enter url"
+read url
 
 regex='^(https?)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]\.[-A-Za-z0-9\+&@#/%?=~_|!:>
 
-url=$1
 if [[ $url =~ $regex ]]
 then
     echo "$url IS valid"
 else
     echo "$url IS NOT valid"
 fi
-
