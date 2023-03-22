@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PS3="Введите число: "
+
+select option in email url numb pass exit
+  do
+        case $option in
+  exit) exit 0 ;;
+  email) . ./email.sh ;;
+  url) . ./url.sh ;;
+  numb) . ./numb.sh ;;
+  pass) . ./pass.sh ;;
+  quit)
+  break ;;
+  *)
+  echo "Недопустимая опция $REPLY"
+ esac
+done
+
