@@ -1,19 +1,23 @@
 #!/bin/bash
 
-PS3="Введите число: "
 
-select option in email url numb pass exit
-  do
-        case $option in
-  exit) exit 0 ;;
-  email) . ./email.sh ;;
-  url) . ./url.sh ;;
-  numb) . ./numb.sh ;;
-  pass) . ./pass.sh ;;
-  quit)
-  break ;;
-  *)
-  echo "Недопустимая опция $REPLY"
- esac
+MENU=(
+    "Проверка email"
+    "Проверка url"
+    "Проверка numb"
+    "Проверка pass"
+    "Завершение работы"
+)
+select menu in "${MENU[@]}" ; do
+    case $REPLY in
+        1) . ./email.sh ;;
+        2) . ./url.sh ;;
+        3) . ./numb ;;
+        4) . ./pass ;;
+        5) exit ;;
+        6) break ;;
+        *)
+        echo "Недопустимая опция ${MENU[@]}"
+    esac
 done
 
