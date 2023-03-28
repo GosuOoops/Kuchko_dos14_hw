@@ -1,0 +1,32 @@
+
+#!/bin/bash
+
+echo "enter password"
+read pas
+
+if [[ $pas =~ ([0-9]+) ]]
+then
+    if [[ $pas =~ ([a-z]+) ]]
+    then
+        if [[ $pas =~ ([A-Z]+) ]]
+        then
+            if [[ ${#pas} -ge 8 ]]
+            then
+                if [[ $pas =~ ([@$#%&*+-=]+) ]]
+                then
+                    echo "password valid"
+                else
+                    echo "Нет спец.символов"
+                fi
+            else
+                echo "Пароль слишком короткий"
+            fi
+        else
+            echo "Нет заглавных букв"
+        fi
+    else
+        echo "Нет строчных букв"
+    fi
+else
+  echo "Нет цифр"
+fi
