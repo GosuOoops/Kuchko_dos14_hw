@@ -1,0 +1,1 @@
+rsync -zvra --min-size='400kB' /home/ev/files ev@192.168.171.135:/home/ev/files
