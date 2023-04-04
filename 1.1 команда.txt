@@ -1,0 +1,1 @@
+for i in {1..500}; do dd if=/dev/urandom bs=1kB count=1 of=/dev/stdout | base64 > $i.txt; done
